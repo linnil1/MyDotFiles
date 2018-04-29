@@ -35,7 +35,6 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set number
-set clipboard=unnamed
 imap kj <esc>
 map PP "+p
 map YY "+y
