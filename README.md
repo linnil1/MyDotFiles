@@ -1,4 +1,12 @@
 # Something need to install 
+on Ubuntu 1804
+
+I will install
+* tmux
+* oh-my-zsh
+* vim-gnome
+* docker
+* docker-compose
 
 make sure you have `wget`
 
@@ -7,7 +15,7 @@ git clone https://github.com/linnil1/MyDotFiles
 cd MyDotFiles
 ```
 
-and run **`sudo sh run.sh`**
+and run **`sh run.sh`**
 
 then logout and login again and you can see the result
 
