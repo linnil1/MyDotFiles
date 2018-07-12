@@ -22,3 +22,7 @@ then logout and login again and you can see the result
 ## Reference
 `.gitconifg` is from https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
 `.tmux.conf` is `screen` flavor
+
+
+## Install on OSX
+https://pjchender.blogspot.com/2017/02/mac-terminal-iterm-2-oh-my-zsh.html
