@@ -29,6 +29,7 @@ filetype plugin indent on    " required
 
 let g:vim_markdown_folding_disabled = 1
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
+
 "set clipboard=unnamed
 set clipboard=unnamedplus
 set shiftwidth=4
@@ -36,8 +37,11 @@ set tabstop=4
 set expandtab
 set number
 imap kj <esc>
-map PP "+p
-map YY "+y
+nmap PP "+p
+nmap YY "+y
 map K i<enter><esc>
-map <C-a> ggVG
+nmap <C-a> ggVG
 set encoding=utf-8
+
+syntax on
+set langmap='q,\\,w,.e,pr,yt,fy,gu,ci,ro,lp,/[,=],aa,os,ed,uf,ig,dh,hj,tk,nl,s\\;,-',\\;z,qx,jc,kv,xb,bn,mm,w\\,,v.,z/,[-,]=,\"Q,<W,>E,PR,YT,FY,GU,CI,RO,LP,?{,+},AA,OS,ED,UF,IG,DH,HJ,TK,NL,S:,_\",:Z,QX,JC,KV,XB,BN,MM,W<,V>,Z?

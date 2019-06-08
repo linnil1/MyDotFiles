@@ -1,26 +1,21 @@
 #!/bin/sh
 
 # Oh My Zsh and tmux
-sudo apt-get install powerline tmux
+sudo apt install -y zsh powerline
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-wget http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme -O ~/.oh.my-zsh/themes/bullet-train.zsh-theme
+wget http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme -O ~/.oh-my-zsh/themes/bullet-train.zsh-theme
 
 # copy Configuration to home dir
-for f in *
-do
-    if [ "$f" != "README.md" ] && [ "$f" != "run.sh" ]; then
-        cp $f ~/.$f
-        echo copy $f to "~/.$f"
-    fi
-done
+./easy_run.sh
 
 # vim
-sudo apt install git vim-gnome
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c 'PluginInstall' -c 'qa!'
 
 # You complete Me
 cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+sudo apt install -y cmake
 python3 install.py --clang-completer
 cd ~
 
@@ -37,13 +32,3 @@ sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    bionic \
    stable"
-#sudo add-apt-repository \
-#   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-#   $(lsb_release -cs) \
-#   stable"
-
-# docker compose
-## https://docs.docker.com/compose/install/#master-builds
-## update version usually
-sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
