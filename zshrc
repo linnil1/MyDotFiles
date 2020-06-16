@@ -82,12 +82,17 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias pip='pip3'
+
+# source ~/Python/env/bin/activate
+stty -ixon
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/Go
+alias dc='docker-compose'
+alias pip='python3 -m pip'
 alias python='python3'
 alias matlab='matlab -nodisplay -nosplash'
+alias gst='git status'
 alias gitst='git status'
-alias docker='sudo docker'
-alias dockcp='sudo docker-compose'
-alias docker='sudo docker'
 alias tmuxn='tmux new -s'
 alias tmuxa='tmux a -t'
+alias vimd='vim -N -u ~/vimrc'

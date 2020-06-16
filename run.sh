@@ -10,13 +10,26 @@ wget http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet
 
 # vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim -c 'PluginInstall' -c 'qa!'
+vim +PluginInstall +qall
+
+# go
+wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.14.2.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+
+# python package
+sudo apt install -y python3-venv python3-pip
+mkdir -p Python
+cd Python
+python3 -m venv env
+source ~/Python/env/bin/activate
+pip3 install numpy scipy matplotlib torch pandas requests flask lxml
+cd ..
 
 # You complete Me
 cd ~/.vim/bundle/YouCompleteMe
 git submodule update --init --recursive
-sudo apt install -y cmake
-python3 install.py --clang-completer
+python3 install.py --clang-completer --go-completer
 cd ~
 
 # docker
@@ -27,8 +40,7 @@ sudo apt install \
     curl \
     software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-#for ubuntu 1804
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   bionic \
+   $(lsb_release -cs)\
    stable"

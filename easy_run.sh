@@ -1,5 +1,6 @@
 # basic
-sudo apt install -y tmux git vim-gnome
+sudo apt install -y tmux git vim-gtk htop cmake
+sudo ln -s /usr/bin/python3 /usr/bin/python
 
 # copy
 for f in *; do
