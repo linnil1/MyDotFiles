@@ -1,1 +1,6 @@
-/home/linnil1/.condarc
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+changeps1: false
+auto_activate_base: false
