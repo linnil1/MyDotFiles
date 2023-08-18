@@ -1,0 +1,1 @@
+/home/linnil1/.linnil1.zsh-theme
